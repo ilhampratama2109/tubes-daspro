@@ -67,18 +67,3 @@ def get_all_data(filename):
 
     f.close()
     return arr
-
-
-def serialize_user(string):
-    id, username, nama, alamat, password, role = split_csv(string)
-
-    temp = {
-        "id": id,
-        "username": username,
-        "nama": nama,
-        "alamat": alamat,
-        "password": password,
-        "role": role,
-    }
-
-    return temp
