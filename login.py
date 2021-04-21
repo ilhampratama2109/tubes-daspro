@@ -48,9 +48,10 @@ def register(filename):
         
         new_password = input("Masukkan password : ")
         new_address = input("Masukkan alamat : ")
-        new_id = str(get_last_id(filename))
+        new_id = str(get_last_id(filename)+1)
         upload_data = (new_id + ";" + new_username + ";" + new_name + ";" + new_address + ";" + new_password + ";" + "User")
         print("User {} telah berhasil register ke dalam Kantong Ajaib".format(new_username))
         data.write("\n")
         data.write(upload_data)
+
 
