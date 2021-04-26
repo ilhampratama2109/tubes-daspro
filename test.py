@@ -104,5 +104,6 @@ arr = get_all_to_dictionary(filename)
 sort_csv_by_key(filename, 'id')
 sort_csv_by_key(filename2, 'id')
 
-#string = dict_to_csv(filename, arr)
-print(arr[0])
+string = dict_to_csv(filename, arr[0])
+# ada enter di ujung jadi tinggal di insert aja
+print(list(string))
