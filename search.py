@@ -18,11 +18,13 @@ def search_by_rarity(filename):
         rarity_input = input("Masukkan rarity : ")
         length = 0
         results = []
+
         count = 0
         for line in data:
             words = split_csv(line)
             results.append((words[0:]))
             length += 1
+
         
         for i in range(0, length):
             if results[i][4] == rarity_input:
@@ -38,11 +40,14 @@ def search_by_year(filename):
         kategori = input("masukkan kategori : ")
         length = 0
         results = []
+
         count = 0
+        
         for line in data:
             words = split_csv(line)
             results.append((words[0:]))
             length += 1
+
 
         for i in range(0, length):
             if (kategori == ("=")):
@@ -81,12 +86,14 @@ def search_by_year(filename):
             print("tidak ada data yang ditemukan")
                 
 
+
 def update_data(filename):
     with open(filename, "w") as data:
         print(">>> update data berdasarkan ID")
         id_input = input("Masukkan ID : ")
         length = 0
         results = []
+
         count = 0
         for line in data:
             words = split_csv(line)
@@ -96,6 +103,7 @@ def update_data(filename):
             if results[i][0] == id_input:
                 for j in range(len(results[i])):
                     results[i][j]= input()
+
                     count = count + 1
             else:
                 continue

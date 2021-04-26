@@ -147,3 +147,27 @@ def get_last_id(filename):
     last_element = after_sorted[-1]
     
     return int(last_element['id'])
+
+# dari dictionary ke string csv
+# contoh query = {"nama": "saya", "pelajaran": "fisika"}
+# akan mengembalikan 'saya;pelajaran\n'
+# perhatikan bahwa ada enter di ujung
+# dictionary harus lengkap mengikuti format header
+# bila namun, bila id tidak diberikan, id akan ditambahkan secara default dengan get_last_id + 1
+def dict_to_csv(filename, query):
+    head = get_header(filename)
+    string = ''
+
+    if query.get('id') == None:
+        query['id'] = get_last_id(filename) + 1
+    
+    string += query['id']
+
+    for head_data in head:
+        string += ';' + query[head_data]
+
+    string += '\n'
+
+    return string
+
+
